@@ -104,7 +104,11 @@ void loop ()
 
 - Below is the behavior of the buzzer:
 
-#video
+
+
+https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/ac3edd45-91f7-4495-9a10-f967713afd9b
+
+
 
 - We can type a new program (as below) to test the buzzer with 2 different frequencies per loop.
 
@@ -127,6 +131,10 @@ void loop ()
     delay(1000);
 }
 ```
+
+
+https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/2312c75b-40b0-4ea0-8b16-6b016dc87f14
+
 
 
 ## Testing
