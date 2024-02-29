@@ -183,10 +183,23 @@ void loop ()
 - The behaviors above can be shown in the demo below: 
 
 
-
 https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/e86c880a-fa3d-41d9-adf4-be081be54c3d
 
+- As you can see, once the ultrasonic signal senses the object, which is our water bottle in this case, the Arduino automatically outputs the distance detected between the ultrasonic sensor and the bottle. 
 
+### Design Challenge: Distance Detector
+
+- Using the buzzer and the ultrasonic sensor that we just got ourselves familiar above, we can build a handheld proximity detector that emits a sound whose pitch correlates with the distance to a nearby object. 
+
+- Specifically, the closer the test object is to the ultrasonic sensor, the higher the pitch of the buzzer's sound is. Otherwise, the buzzer will produce a low-pitched sound. 
+
+#### Programming the Arduino
+
+- Firstly, we have to combine the Buzzer's code with the ultrasonic sensor's code in order to get both devices up and running.
+
+<img src="./assets/Arduino_code.png" />
+
+- Besides assigning an output pin from the Arduino to power up the Buzzer (pin number 12), we had to 
 
 ## Conclusion
 
