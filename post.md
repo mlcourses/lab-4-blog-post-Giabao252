@@ -53,9 +53,17 @@ In this lab, we'll use the arduino microcontroller to communicate and interact w
 
 
 
+https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/893e1b0e-1377-4130-9bbe-7f7ead505210
+
+
+
 2.  The second test would be using the breadboard's function generator to power up the buzzer and modify its behavior. 
 
 - We can do it by plugging the other end of the test wire to the input of the function generator (non-TTLs). The video below demonstrates different behaviors of the buzzer corresponding to different settings of the function generator.
+
+
+
+https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/8a17ea95-5224-4c0e-93cd-31744f374fc7
 
 
 
