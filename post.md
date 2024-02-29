@@ -51,21 +51,16 @@ In this lab, we'll use the arduino microcontroller to communicate and interact w
 
 - Using the other end of the test wire, we can touch it and release to any +5V connections throughout the breadboard. We should hear a "click" sound each time we touch and release the wiring pin, see the video below for demo
 
-
-
 https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/893e1b0e-1377-4130-9bbe-7f7ead505210
-
 
 
 2.  The second test would be using the breadboard's function generator to power up the buzzer and modify its behavior. 
 
 - We can do it by plugging the other end of the test wire to the input of the function generator (non-TTLs). The video below demonstrates different behaviors of the buzzer corresponding to different settings of the function generator.
 
+ https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/8a17ea95-5224-4c0e-93cd-31744f374fc7
 
-
-https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/8a17ea95-5224-4c0e-93cd-31744f374fc7
-
-
+- As we can see, the buzzer gets louder when frequency is at peak and vice versa while the AMP slider seems to adjust the volume of the buzzer.
 
 3. Automate testing with Arduino
 
@@ -104,8 +99,6 @@ void loop ()
 
 - Below is the behavior of the buzzer:
 
-
-
 https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/ac3edd45-91f7-4495-9a10-f967713afd9b
 
 
@@ -132,12 +125,64 @@ void loop ()
 }
 ```
 
-
 https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/2312c75b-40b0-4ea0-8b16-6b016dc87f14
 
+- From the code and the video demo, we can see that the buzzer is producing high-frequency sounds as the variables `f1` and `f2` in the code are assigned to high value of frequencies, and each iteration of the loop function, there is a 1000 miliseconds delay between the two frequency levels.
+
+### 2. Ultrasonic Sensor
+
+- The ultrasonic sensor measures distance by using sonar. 
+
+- It sends out a pong (ultrasonic so we cannot hear it) adn records the time the ping echoes back. The time interval, with the speed of sound, tells us the distance to the object the sound waves echoed off. 
+
+- The ultrasonic sensor has two "microphone" looking things and four pins emitting from the bottom.
+
+#### Testing the Ultrasonic Sensor
+
+- Firstly, we have to plug our sensor into the auxiliary breadboard instead of our PB-503 breadboard because the proximity of other stuff on the breadboard will give us false echo readings (there are things in the way of the sound waves other than just our own object of distance measurement). The four pons should span four rows of the breadboard. 
+
+- Connect the `+` (top pin) pin to a +5V pin on the breadboard, and the `-` pin (bottom pin) to a Ground pin. 
+
+- Connect the `Trig` pin to pin 13 on the Arduino as it will be the pin which turns on the sonar device.
+
+- Connect the `Echo` pin to pin 2 on the Arduino. This will be the pin which reads the echo (input on Arduino,
+output on sonar device)
+
+- Now, we are going to type, upload and run the program below: 
+
+```C++
+#define TRIG 13
+#define ECHO 2
+void setup ()
+{
+    pinMode(TRIG,OUTPUT);
+    pinMode(ECHO,INPUT);
+    Serial.begin(9600);
+    Serial.println("Start");
+}
+void loop ()
+{
+    Serial.println("Initiating Reading");
+    digitalWrite(TRIG,HIGH);
+    delay(10);
+    digitalWrite(TRIG,LOW);
+    int distance = pulseIn(ECHO,HIGH)/2;
+    distance = distance / 29; // tuning parameter
+    Serial.print("Distance in cm is ");
+    Serial.println(distance);
+    delay(2000); // wait 2 seconds before next reading
+}
+```
+
+- Lets dive into what the code does! This code uses a simple pulse-based technique to operate the ultrasonic sensor. Initially, it sets up the sensor's `Trig` and `Echo` pins, as well as establishes serial communication for output. The main loop initiates distance readings by sending a short trigger pulse and then measuring the time it takes for the echo signal to return. This duration is converted into distance using the known speed of sound. The calculated distance is then transmitted over serial communication for external processing or display. This process repeats in a continuous loop, allowing for real-time distance monitoring.
+
+- Also, we have to open the Serial Monitor to see the program's outputs during our measurement testings. 
+
+- When a high signal is transmitted to the ultrasonic sensor, it initiates the emission of an ultrasonic signal. Conversely, a low signal switches the ultrasonic sensor to "receiving mode," prompting it to detect the emitted signal. The pulseIn() function in Arduino is utilized with two parameters: the pin number and either HIGH or LOW. When set to HIGH, the Arduino unit commences timing upon the transition of the signal from LOW to HIGH and ceases when it returns to LOW.
+
+- The behaviors above can be shown in the demo below: 
 
 
-## Testing
 
 ## Conclusion
 
