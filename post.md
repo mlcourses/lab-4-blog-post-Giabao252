@@ -199,7 +199,13 @@ https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/e86c880a-
 
 <img src="./assets/Arduino_code.png" />
 
-- Besides assigning an output pin from the Arduino to power up the Buzzer (pin number 12), we had to 
+- Besides assigning an output pin from the Arduino to power up the Buzzer (pin number 12), we had to add a default frequency to the loop function. 
+
+- The `f = 5000` line sets the maximum frequency to 5000 Hz, so that when the test object is nearest to the ultrasonic sensor, the buzzer produces a very high-pitched sound of 5000 Hz. 
+
+- The more we move the test object away from the ultrasonic sensor, the lower the buzzer's sound pitch is. In order to do that, we can utilize the value of the variable `distance` by subtracting the frequency threshold (5000 Hz) with the current value of `distance`. Note that we are specifically using this variable **BEFORE** it was tuned by 29. 
+
+- The reason why we are using the `distance` is that it is not as small as its value after being tuned 
 
 ## Conclusion
 
