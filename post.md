@@ -217,6 +217,6 @@ https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/c9afc79e-
 
 ## Conclusion
 
-
+In this lab session, we delved into the realm of microcontrollers, sensors, and actuators, expanding upon our previous understanding of digital circuitry. Through a series of exploratory exercises, we engaged with various components such as the buzzer, servo, ultrasonic sensor, and photoresistor, each offering unique insights into interfacing with the physical world. We began by familiarizing ourselves with the operation of a buzzer, understanding its ability to effect change in the environment through controlled sound emission. Subsequently, we explored the ultrasonic sensor, employing pulse-based techniques to measure distance through sonar principles. Through hands-on experimentation and Arduino programming, we gained practical experience in harnessing these devices to develop real-world applications, culminating in a design challenge where we integrated the buzzer and ultrasonic sensor to create a handheld distance detector. This lab not only equipped us with technical skills but also underscored the interdisciplinary nature of engineering, highlighting the importance of integrating theory with practical application for innovative problem-solving.
 
 
