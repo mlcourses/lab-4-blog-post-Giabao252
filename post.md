@@ -205,7 +205,11 @@ https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/e86c880a-
 
 - The more we move the test object away from the ultrasonic sensor, the lower the buzzer's sound pitch is. In order to do that, we can utilize the value of the variable `distance` by subtracting the frequency threshold (5000 Hz) with the current value of `distance`. Note that we are specifically using this variable **BEFORE** it was tuned by 29. 
 
-- The reason why we are using the `distance` is that it is not as small as its value after being tuned 
+- The reason why we are using the `distance` is that it is not as small as its value after being tuned, but it is big enough to shift the sound profile of the buzzer in terms of the resulting frequency. 
+
+- Below is the demo of this design challenge; 
+
+
 
 ## Conclusion
 
