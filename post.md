@@ -211,6 +211,10 @@ https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/e86c880a-
 
 
 
+https://github.com/mlcourses/lab-4-blog-post-Giabao252/assets/87928752/c9afc79e-0a88-4ab7-b1a7-df20f09ded15
+
+
+
 ## Conclusion
 
 
